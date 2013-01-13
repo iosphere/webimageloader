@@ -8,16 +8,13 @@ notifications:
   email: false
 
 before_install:
-  - sudo cat /etc/dpkg/dpkg.cfg.d/multiarch
-  - sudo apt-get update -qq
-  - sudo apt-get dist-upgrade
-  - sudo apt-get install -f ia32-libs-multiarch
-  - sudo apt-get install -f ia32-libs
-  - wget http://dl.google.com/android/android-sdk_r21.0.1-linux.tgz
-  - tar -zxf android-sdk_r21.0.1-linux.tgz
-  - export ANDROID_HOME=`pwd`/android-sdk-linux
+  #- wget http://dl.google.com/android/android-sdk_r21.0.1-linux.tgz
+  #- tar -zxf android-sdk_r21.0.1-linux.tgz
+  - wget http://dl.google.com/android/adt/adt-bundle-linux-x86_64.zip
+  - tar -zxf adt-bundle-linux-x86_64.zip
+  - export ANDROID_HOME=`pwd`/sdk/android-sdk-linux
   - export PATH=${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
-  - android update sdk --filter platform-tools,android-16 --no-ui --force
+  - android update sdk --filter android-16 --no-ui --force
   - ls -la
   - ls -la android-sdk-linux
   - ls -la android-sdk-linux/platform-tools
