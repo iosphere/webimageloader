@@ -8,8 +8,9 @@ notifications:
   email: false
 
 before_install:
+  - sudo dpkg --add-architecture i386
   - sudo apt-get update -qq
-  - sudo apt-get install git zsh
+  - sudo apt-get install ia32-libs
   - wget http://dl.google.com/android/android-sdk_r21.0.1-linux.tgz
   - tar -zxf android-sdk_r21.0.1-linux.tgz
   - export ANDROID_HOME=`pwd`/android-sdk-linux
