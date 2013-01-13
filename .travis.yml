@@ -11,8 +11,8 @@ before_install:
   #- wget http://dl.google.com/android/android-sdk_r21.0.1-linux.tgz
   #- tar -zxf android-sdk_r21.0.1-linux.tgz
   - wget http://dl.google.com/android/adt/adt-bundle-linux-x86_64.zip
-  - unzip adt-bundle-linux-x86_64.zip
-  - export ANDROID_HOME=`pwd`/adt-bundle-linux-x86_64/sdk/android-sdk-linux
+  - unzip -q adt-bundle-linux-x86_64.zip
+  - export ANDROID_HOME=`pwd`/adt-bundle-linux-x86_64/sdk
   - export PATH=${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
   - android update sdk --filter android-16 --no-ui --force
   - ls -la
