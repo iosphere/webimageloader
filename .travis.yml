@@ -15,3 +15,4 @@ before_install:
   - export ANDROID_HOME=`pwd`/adt-bundle-linux-x86_64/sdk
   - export PATH=${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
   - android update sdk --filter android-16 --no-ui --force
+  - adb
