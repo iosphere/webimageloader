@@ -8,9 +8,10 @@ notifications:
   email: false
 
 before_install:
-  - sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 437D05B5 3E5C1192
+  #- sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 437D05B5 3E5C1192
+  - dpkg --get-selections | grep hold
   - sudo apt-get update
-  - sudo apt-get install -f ia32-libs
+  - sudo apt-get install ia32-libs
   - wget http://dl.google.com/android/android-sdk_r21.0.1-linux.tgz
   - tar -zxf android-sdk_r21.0.1-linux.tgz
   - export ANDROID_HOME=`pwd`/android-sdk-linux
